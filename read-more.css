@@ -1,0 +1,64 @@
+main .col.more{
+    position: relative;
+    background-color: #333;
+    position: fixed;
+    /* display: flex; */
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    margin: 0;
+    padding: 5vw;
+   overflow-y: scroll;
+
+}main .col.more img{
+    /* padding-top: 5vw; */
+   display: flex;
+   padding: 0;
+  width:100%;
+
+}main .col.more .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* text-align: center; */
+    text-align: center;
+
+ }
+ main .col.more .card-body .btn-group{
+    margin:0 auto;
+ }.close-read{
+    display: none;
+ }
+
+ main .col.more .close-read{
+    display: block;
+    position: fixed;
+    top: 3vh;
+    right: 3vw;
+    /* background-color: #fff; */
+ }
+ main .col.more .read-more{
+    display: none;
+ }
+
+#read-hidden-text{
+    display:none;
+}
+main .col.more #read-hidden-text{
+    display:block;
+    text-align: center;
+    padding: 3vh 5vw;
+    margin: 0 auto;
+    
+}main .col.more .card-text{
+    display:none;
+}
+main .col.more .card{
+   border: none;
+   overflow: hidden;
+}
+
+
+
