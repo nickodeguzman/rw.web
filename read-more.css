@@ -62,3 +62,18 @@ main .col.more .card{
 
 
 
+.card{
+   height: 600px ;
+  
+}
+
+.card-body{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+main .col.more .card{
+   height: unset !important;
+  
+}  
