@@ -36,7 +36,7 @@ main .col.more{
  main .col.more .close-read{
     display: block;
     position: fixed;
-    top: 3vh;
+  
          top: 100px;
     right: 3vw;
     /* background-color: #fff; */
