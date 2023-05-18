@@ -1,4 +1,5 @@
 main .col.more{
+    padding-top:100px;
     position: relative;
     background-color: #333;
     position: fixed;
@@ -36,6 +37,7 @@ main .col.more{
     display: block;
     position: fixed;
     top: 3vh;
+         top: 100px;
     right: 3vw;
     /* background-color: #fff; */
  }
