@@ -274,16 +274,16 @@
               <table class="table">
                 <thead>
                   <tr>
-                    <!-- <th scope="col">Date</th>
+                    <th scope="col">Date</th>
                     
-                    <th scope="col">Event</th> -->
+                    <th scope="col">Event</th>
                     
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <!-- <th scope="row">June 7-8</th> -->
-                    <td></td>
+                    <th scope="row">Oct 02, 2024</th>
+                    <td> Carrer Forum by Mr. Francis Kong</td>
                     <!-- <td></td> -->
                     
                   
@@ -441,82 +441,260 @@
           </div>
           
           <script>
-           
-           
-            
-            
-  fetch('readmore.json')
-  .then((response) => response.json())
-  .then(data => { 
-    data.sort(function (a, b) {
-      var dataA= new Date(a.date);
-      var dataB= new Date(b.date);
-      return dataB-dataA
-    
-    });
-
-
-    Object.entries(data).forEach(([key, value]) => {
-        const test=`  <div class="col">
-          <div class="card shadow-sm">
-            <img src=${data[key].src} >
-            <div class="card-body">
-              <h5 class="card-title">${data[key].title}</h5>
-              <p class="card-text">${data[key].subtitle}</p>
-              <div id="read-hidden-text">${data[key].readmoretxt}</div>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="read-more btn btn-sm btn-outline-secondary">Read more</button>
-                  <button type="button" class="close-read btn btn-sm btn-outline-secondary">Back</button>
-                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> --> 
+            fetch('readmore.json')
+    .then((response) => response.json())
+    .then(data => {
+      // Sort the data by date
+      data.sort((a, b) => new Date(b.date) - new Date(a.date));
+  
+      const featuredStoriesContainer = document.getElementById('featured-stories-container');
+  
+      Object.entries(data).forEach(([key, value]) => {
+        const cardHTML = `
+          <div class="col">
+            <div class="card shadow-sm">
+              <img class="images" src="${value.s0}" alt="">
+              <div class="card-body">
+                <h5 class="card-title">${value.title}</h5>
+                <p class="card-text">${value.subtitle}</p>
+                
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="read-more btn btn-sm btn-outline-secondary">Read more</button>
+                    
+                  </div>
+                  <small class="text-muted"></small>
                 </div>
-                <small class="text-muted"></small>
+                <div class="slider" style="display: none;"> <!-- Initially hidden -->
+                  
+                  <div class="list">
+                    
+                    <div class="item">
+                      
+                      <div class="hidden">
+                        
+                       <p>${value.readmoretxt}</p>
+                      </div>
+                      
+                      <img src="${value.  s0}" alt="">
+                       <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div> 
+                    </div>
+                    <button type="button" class=" close-read btn btn-sm btn-outline-secondary">Back</button>
+                    <div class="item">
+                      
+                      <img src="${value.s1}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s2}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                     
+                      <img src="${value.s3}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s4}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s5}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s6}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s7}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s8}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s9}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s10}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+  
+                    <div class="item">
+                      
+                      <img src="${value.s11}" alt="">
+                      <div class="button_back">
+                        <a href="index.html" class="btn-back">Back</a>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <div class="buttons">
+                    <button class="prev" style="display: none;"><</button>
+                    <button class="next" style="display: none;">></button>
+                  </div>
+                  <ul class="dots">
+                    
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                  </ul>
+  
+                </div>
               </div>
             </div>
-          </div>
-        </div>`;
-        
-          const featuredStoriesContainer= document.getElementById('featured-stories-container')
-          featuredStoriesContainer.innerHTML+=test; //DISPLAY ELEMENTS INSIDE FEATURED STORIES CONTAINER
-          
-
-          const readmoreBTN= document.querySelectorAll(".read-more")
-          const closereadmoreBTN= document.querySelectorAll(".close-read")
-
-        readmoreBTN.forEach(btn => {     
-          let btnContainer= btn.parentElement;
-            let btnContainer2= btnContainer.parentElement;
-            let btnContainer3= btnContainer2.parentElement;
-            let btnContainer4= btnContainer3.parentElement;
-            let mainContainer=btnContainer4.parentElement;        
-          btn.addEventListener('click',()=>{
-            mainContainer.classList.add('more')
-          })
-        });
-
-        closereadmoreBTN.forEach(btn => {
-          let btnContainer= btn.parentElement;
-            let btnContainer2= btnContainer.parentElement;
-            let btnContainer3= btnContainer2.parentElement;
-            let btnContainer4= btnContainer3.parentElement;
-            let mainContainer=btnContainer4.parentElement;             
-          btn.addEventListener('click',()=>{
-            mainContainer.classList.remove('more')
-          })
-
-          document.addEventListener('keydown', function(e) {
-              if(e.keyCode == 27){
-                mainContainer.classList.remove('more')
-              }
-          });
-      
-        });
-
-
+          </div>`;
+  
+        featuredStoriesContainer.innerHTML += cardHTML;
       });
-  })
-           
-          </script>
+  
+      addEventListeners();
+    });
+  
+  function addEventListeners() {
+    const readmoreBTN = document.querySelectorAll(".read-more");
+    const closereadmoreBTN = document.querySelectorAll(".close-read");
+  
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'overlay';
+    document.body.appendChild(overlay);
+  
+    readmoreBTN.forEach(btn => {
+      const mainContainer = btn.closest('.card'); 
+      const slider = mainContainer.querySelector('.slider');
+      const prevButton = slider.querySelector('.prev');
+      const nextButton = slider.querySelector('.next');
+  
+      btn.addEventListener('click', () => {
+        overlay.style.display = 'flex'; // Show overlay
+        slider.style.display = 'block'; // Show the slider
+        prevButton.style.display = 'inline-block'; // Show the previous button
+        nextButton.style.display = 'inline-block'; // Show the next button
+  
+        // Initialize slider functionality
+        addSliderFunctionality(slider);
+      });
+    });
+  
+    closereadmoreBTN.forEach(btn => {
+      const mainContainer = btn.closest('.card'); 
+      const slider = mainContainer.querySelector('.slider');
+      const prevButton = slider.querySelector('.prev');
+      const nextButton = slider.querySelector('.next');
+  
+      btn.addEventListener('click', () => {
+        overlay.style.display = 'none'; // Hide overlay
+        slider.style.display = 'none'; // Hide the slider
+        prevButton.style.display = 'none'; // Hide the previous button
+        nextButton.style.display = 'none'; // Hide the next button
+      });
+  
+      document.addEventListener('keydown', function(e) {
+        if (e.keyCode == 27) { // Escape key
+          overlay.style.display = 'none';
+          slider.style.display = 'none'; 
+          prevButton.style.display = 'none'; 
+          nextButton.style.display = 'none'; 
+        }
+      });
+    });
+  
+    // Close overlay on click
+    overlay.addEventListener('click', () => {
+      overlay.style.display = 'none'; // Hide overlay
+      document.querySelectorAll('.slider').forEach(slider => {
+        slider.style.display = 'none'; // Hide all sliders
+      });
+    });
+  }
+  
+  function addSliderFunctionality(slider) {
+    const list = slider.querySelector('.list');
+    const items = slider.querySelectorAll('.item');
+    const dots = slider.querySelectorAll('.dots li');
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+  
+    let active = 0;
+    const lengthItems = items.length;
+  
+    next.onclick = function() {
+      active = (active + 1) % lengthItems; 
+      reloadSlider();
+    };
+  
+    prev.onclick = function() {
+      active = (active - 1 + lengthItems) % lengthItems; 
+      reloadSlider();
+    };
+  
+    function reloadSlider() {
+      const checkLeft = items[active].offsetLeft;
+      list.style.left = -checkLeft + 'px';
+  
+      const lastActiveDot = slider.querySelector('.dots li.active');
+      if (lastActiveDot) {
+        lastActiveDot.classList.remove('active');
+      }
+      dots[active].classList.add('active');
+    }
+  
+    reloadSlider();
+  }
+  </script>
          
 </body>
 </html>
